@@ -6,7 +6,7 @@
 	position: relative;
 }
 
-.infoBlock {
+.info__block {
 	position: absolute;
 	top: 0;
 	margin: 50px auto;
