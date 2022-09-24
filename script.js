@@ -7,27 +7,29 @@ div.className = "button-block";
 
 // Создаём компоненты
 
-const homeComponent = `
-<a class="button" href="#home">home</a>
-<a class="button" href="#settings">settings</a>
-<a class="button" href="#about">about</a>
-
-<h1 class="info__block">Home</h1>
-`,
-	settingsComponent = `
-<a class="button" href="#home">home</a>
-<a class="button" href="#settings">settings</a>
-<a class="button" href="#about">about</a>
-
-<h1 class="info__block">Settings</h1>
-`,
-	aboutComponent = `
-<a class="button" href="#home">home</a>
-<a class="button" href="#settings">settings</a>
-<a class="button" href="#about">about</a>
-
-<h1 class="info__block">About</h1>
-`;
+const components = {
+	home : `
+	<a class="button" href="#home">home</a>
+	<a class="button" href="#settings">settings</a>
+	<a class="button" href="#about">about</a>
+	
+	<h1 class="info__block">Home</h1>
+	`,
+	settings : `
+	<a class="button" href="#home">home</a>
+	<a class="button" href="#settings">settings</a>
+	<a class="button" href="#about">about</a>
+	
+	<h1 class="info__block">Settings</h1>
+	`,
+	about : `
+	<a class="button" href="#home">home</a>
+	<a class="button" href="#settings">settings</a>
+	<a class="button" href="#about">about</a>
+	
+	<h1 class="info__block">About</h1>
+	`,
+};
 
 
 //получаем инфу из хеша
@@ -47,16 +49,16 @@ function handleHash() {
 
 	switch (name) {
 		case "home":
-			render(homeComponent, div);
+			render(components.home, div);
 			break;
 		case "settings":
-			render(settingsComponent, div);
+			render(components.settings, div);
 			break;
 		case "about":
-			render(aboutComponent, div);
+			render(components.about, div);
 			break;
 		default:
-			render(homeComponent, div);
+			render(components.home, div);
 			break;
 	}
 
