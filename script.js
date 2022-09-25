@@ -1,7 +1,7 @@
 "use stict"
 
 // Добавляем компоненты 
-import { homeComponent, settingsComponent, aboutComponent, buttonsComponent } from '/components/mainModul.js';
+import { homeComponent, settingsComponent, aboutComponent } from '/components/index.js';
 
 
 // создаём блоки в html
@@ -28,16 +28,16 @@ function handleHash() {
 
 	switch (name) {
 		case "home":
-			render(buttonsComponent + homeComponent, div);
+			render(homeComponent(), div);
 			break;
 		case "settings":
-			render(buttonsComponent + settingsComponent, div);
+			render(settingsComponent(), div);
 			break;
 		case "about":
-			render(buttonsComponent + aboutComponent, div);
+			render(aboutComponent(), div);
 			break;
 		default:
-			render(buttonsComponent + homeComponent, div);
+			render(homeComponent(), div);
 			break;
 	}
 
