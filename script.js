@@ -1,35 +1,12 @@
 "use stict"
 
+// Добавляем компоненты 
+import { homeComponent, settingsComponent, aboutComponent, buttonsComponent } from '/components/mainModul.js';
+
+
 // создаём блоки в html
 let div = document.getElementById('root');
 div.className = "button-block";
-
-
-// Создаём компоненты
-
-const components = {
-	home : `
-	<a class="button" href="#home">home</a>
-	<a class="button" href="#settings">settings</a>
-	<a class="button" href="#about">about</a>
-	
-	<h1 class="info__block">Home</h1>
-	`,
-	settings : `
-	<a class="button" href="#home">home</a>
-	<a class="button" href="#settings">settings</a>
-	<a class="button" href="#about">about</a>
-	
-	<h1 class="info__block">Settings</h1>
-	`,
-	about : `
-	<a class="button" href="#home">home</a>
-	<a class="button" href="#settings">settings</a>
-	<a class="button" href="#about">about</a>
-	
-	<h1 class="info__block">About</h1>
-	`,
-};
 
 
 //получаем инфу из хеша
@@ -38,10 +15,12 @@ function getRouteInfo() {
 	return hash;
 };
 
+
 // Создаём функцию рендера 
 function render(content, path) {
 	path.innerHTML = content;
 }
+
 
 // меняем блок в зависимости от хеша
 function handleHash() {
@@ -49,16 +28,16 @@ function handleHash() {
 
 	switch (name) {
 		case "home":
-			render(components.home, div);
+			render(buttonsComponent + homeComponent, div);
 			break;
 		case "settings":
-			render(components.settings, div);
+			render(buttonsComponent + settingsComponent, div);
 			break;
 		case "about":
-			render(components.about, div);
+			render(buttonsComponent + aboutComponent, div);
 			break;
 		default:
-			render(components.home, div);
+			render(buttonsComponent + homeComponent, div);
 			break;
 	}
 
@@ -75,10 +54,4 @@ function init() {
 }
 
 init();
-
-
-
-
-
-
 
