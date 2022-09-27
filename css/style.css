@@ -1,9 +1,29 @@
 .button-block {
-	display: flex;
+	display: grid;
 	justify-content: center;
 	padding-top: 200px;
 	gap: 10px;
 	position: relative;
+	grid-template-columns: repeat(3, 200px);
+	grid-template-rows: 20px 1fr;
+	justify-items: center;
+}
+
+.container__movie-list {
+	grid-column: 1 / 4;
+	grid-row: 2;
+}
+
+.movie-list {
+	list-style: none;
+	padding: 0;
+}
+
+.movie-list__item {
+display: flex;
+gap: 20px;
+align-items: center;
+padding: 10px;
 }
 
 .info__block {

@@ -1,8 +1,8 @@
 export { settingsComponent };
-import {rButton} from "./index.js";
+import {rLink} from "./index.js";
 
 function settingsComponent() { 
-	return `${rButton("home","button","#home")}
-	${rButton("settings","button","#settings")}
-	${rButton("about","button","#about")}
+	return `${rLink("home","button","#home")}
+	${rLink("settings","button","#settings")}
+	${rLink("about","button","#about")}
 <h1 class="info__block">Settings</h1>`};

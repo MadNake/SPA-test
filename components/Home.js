@@ -1,8 +1,11 @@
 export { homeComponent };
-import {rButton} from "./index.js";
+import {rLink, movieList} from "./index.js";
+
 
 function homeComponent() { 
-	return `${rButton("home","button","#home")}
-	${rButton("settings","button","#settings")}
-	${rButton("about","button","#about")}
-<h1 class="info__block">Home</h1>`};
+	return `${rLink("home","button","#home")}
+	${rLink("settings","button","#settings")}
+	${rLink("about","button","#about")}
+	<h1 class="info__block">Home</h1>
+	${movieList()}
+	`};
