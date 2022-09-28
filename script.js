@@ -1,8 +1,7 @@
 "use stict"
 
 // added components
-import { homeComponent, settingsComponent, aboutComponent, rDiv, addItemList} from '/components/index.js';
-import data from './movies.json' assert { type: 'json' };
+import { homeComponent, settingsComponent, aboutComponent, rDiv} from '/components/index.js';
 
 // creat blocks in HTML
 let mainDiv = document.getElementById('root');
@@ -28,17 +27,6 @@ function handleHash() {
 	switch (name) {
 		case "home":
 			render(rDiv(`${homeComponent()}`, "button-block"), mainDiv);
-			for (let i = 0; i < data.imdb_movies.length; i++) {
-				addItemList("movieList", `${[i+1]} - ${data.imdb_movies[i].movie_name} - ${data.imdb_movies[i].year}`, "movie-list__item");
-			};
-			for (let i = 0; i < data.imdb_movies.length; i++) {
-				let imgItem = document.createElement("img");
-				imgItem.setAttribute("src", `${data.imdb_movies[i].poster_image}`);
-				imgItem.setAttribute("height", "50");
-				imgItem.setAttribute("width", "50");
-				let item = document.querySelectorAll(".movie-list__item");
-				item[i].appendChild(imgItem);
-			}
 			break;
 		case "settings":
 			render(rDiv(`${settingsComponent()}`, "button-block"), mainDiv);
@@ -48,17 +36,6 @@ function handleHash() {
 			break;
 		default:
 			render(rDiv(`${homeComponent()}`, "button-block"), mainDiv);
-			for (let i = 1; i < data.imdb_movies.length; i++) {
-				addItemList("movieList", `${[i+1]} - ${data.imdb_movies[i].movie_name} - ${data.imdb_movies[i].year}`, "movie-list__item")
-			};
-			for (let i = 0; i < data.imdb_movies.length; i++) {
-				let imgItem = document.createElement("img");
-				imgItem.setAttribute("src", `${data.imdb_movies[i].poster_image}`);
-				imgItem.setAttribute("height", "50");
-				imgItem.setAttribute("width", "50");
-				let item = document.querySelectorAll(".movie-list__item");
-				item[i].appendChild(imgItem);
-			};
 			break;
 	}
 

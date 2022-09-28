@@ -1,15 +1,9 @@
-export {movieList, addItemList};
-import {rList, rDiv} from "./index.js";
+export {MovieComponent};
 
-function movieList() {
-	return `${rDiv(rList("", "movie-list", "movieList"), "container__movie-list")}`;
-};
-
-function addItemList(idList="", text="", className="") {
-	let list = document.getElementById(idList);
-	let elem = document.createElement("li");
-	elem.textContent = text;
-	elem.classList.add(className);
-	list.appendChild(elem);
-};
+const MovieComponent = (movie) => `
+  <li class= "movie-list__item">
+    <span>${movie.ranking} - ${movie.movie_name} - ${movie.year}</span>
+	 <img src="${movie.poster_image}" width="50" height="50">
+  </li>
+`;
 
