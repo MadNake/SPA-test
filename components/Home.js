@@ -1,13 +1,21 @@
 export { homeComponent };
-import {rLink, MovieComponent, rList, rDiv} from "./index.js";
+import {linkComponent, MovieComponent} from "./index.js";
 import data from '../movies.json' assert { type: 'json' };
 
 
 function homeComponent() { 
-	return `${rLink("home","button","#home")}
-	${rLink("settings","button","#settings")}
-	${rLink("about","button","#about")}
-	<h1 class="info__block">Home</h1>
+	return `
+	<div class ="button-block">
+		${linkComponent("home","button","#home")}
+		${linkComponent("settings","button","#settings")}
+		${linkComponent("about","button","#about")}
+		<h1 class="info__block">Home</h1>
 
-	${rDiv(`${rList(`${data.imdb_movies.map(MovieComponent).join('')}`,`movie-list`)}`,`container__movie-list`)};
+		<div class="container__movie-list">
+			<ul class="movie-list">
+			${data.imdb_movies.map(MovieComponent).join('')}
+			</ul>
+		</div>
+
+	 </div>
 	`};

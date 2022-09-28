@@ -1,8 +1,12 @@
 export { aboutComponent };
-import {rLink} from "./index.js";
+import {linkComponent} from "./index.js";
 
 function aboutComponent() { 
-	return `${rLink("home","button","#home")}
-	${rLink("settings","button","#settings")}
-	${rLink("about","button","#about")}
-<h1 class="info__block">About</h1>`};
+	return `
+	<div class="button-block">
+		${linkComponent("home","button","#home")}
+		${linkComponent("settings","button","#settings")}
+		${linkComponent("about","button","#about")}
+		<h1 class="info__block">About</h1>
+	</div>`
+};

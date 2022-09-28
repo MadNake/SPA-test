@@ -1,7 +1,7 @@
 "use stict"
 
 // added components
-import { homeComponent, settingsComponent, aboutComponent, rDiv} from '/components/index.js';
+import { homeComponent, settingsComponent, aboutComponent} from '/components/index.js';
 
 // creat blocks in HTML
 let mainDiv = document.getElementById('root');
@@ -26,16 +26,16 @@ function handleHash() {
 
 	switch (name) {
 		case "home":
-			render(rDiv(`${homeComponent()}`, "button-block"), mainDiv);
+			render(homeComponent(), mainDiv);
 			break;
 		case "settings":
-			render(rDiv(`${settingsComponent()}`, "button-block"), mainDiv);
+			render(settingsComponent(), mainDiv);
 			break;
-		case "about":
-			render(rDiv(`${aboutComponent()}`, "button-block"), mainDiv);
+		case "about":	
+			render(aboutComponent(), mainDiv);
 			break;
 		default:
-			render(rDiv(`${homeComponent()}`, "button-block"), mainDiv);
+			render(homeComponent(), mainDiv);
 			break;
 	}
 
