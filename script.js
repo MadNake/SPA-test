@@ -1,8 +1,7 @@
 "use stict"
 
 // added components
-import { homeComponent, settingsComponent, aboutComponent} from '/components/index.js';
-
+import { homeComponent, settingsComponent, aboutComponent, listeners} from '/components/index.js';
 // creat blocks in HTML
 let mainDiv = document.getElementById('root');
 
@@ -38,18 +37,20 @@ function handleHash() {
 			render(homeComponent(), mainDiv);
 			break;
 	}
-
+	for (let i = 0; i < listeners.length; i++) {
+		listeners[i]();
+	}
+	listeners.length = 0;
 };
 
-// create array with buttons
-let buttons = document.getElementsByClassName("button");
 
 //create an addIventListener to # changing and init the function
 function init() {
 	addEventListener("hashchange", handleHash);
 	handleHash();
-	buttons[0].click();
+	location.hash = "home"; 
 }
 
 init();
+
 
