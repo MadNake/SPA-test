@@ -1,29 +1,28 @@
-export { linkComponent, listeners };
+export { linkComponent, ToggleThemeButtonsComponent };
+import { setState, getState, handleHash, onRender } from './index.js'
 
-let listeners = [];
+const ToggleThemeButtonsComponent = () => {
+	const currentTheme = getState('theme');
 
-function onRender(params) {
-	listeners.push(params);
-
+	return linkComponent({
+		text: currentTheme === "light" ? 'toggle to dark' : 'toggle to light',
+		className: "button",
+		href: "#settings",
+		id: "toggleID",
+		onClick: () => {currentTheme === "light" ? setState("theme", "dark") : setState("theme", "light");
+		handleHash()},
+	})
 };
 
 
-function linkComponent(text = "", className = "", type = "", id = "") {
-	const callback = () => document.getElementById(id).addEventListener('click', () => {
-		alert(text);
-		// if (id === `toggle`) {
-		// 	document.body.style.color = "#fff";
-		// 	let buttons = document.getElementsByClassName("button");
-		// 	for (let i = 0; i < buttons.length; i++) {
-		// 		buttons[i].style.color = "#fff";
-		// 	};
-		// 	document.body.style.background = "#1f1c1c";
-		// 	document.querySelector("#toggle").innerHTML = "toggle to light";
-		// };
-	});
-
-	onRender(callback)
-
-	return `<a class="${className}" href="${type}" id="${id}">${text}</a>`;
+function linkComponent(props) {
+	if (props.onClick) {
+		onRender(() => {
+			document
+				.querySelector(`#${props.id}`)
+				.addEventListener('click', props.onClick);
+		})
+	}
+	
+	return `<a class="${props.className}" href="${props.href}" id="${props.id}">${props.text}</a>`;
 }
-

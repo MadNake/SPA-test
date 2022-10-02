@@ -1,13 +1,27 @@
 export { aboutComponent };
-import {linkComponent} from "./index.js";
+import { linkComponent, state } from "./index.js";
 
-function aboutComponent() { 
+function aboutComponent() {
 	return `
-	<div class="button-block">
-	${linkComponent("home","button","#home", "home")}
-	${linkComponent("settings","button","#settings", "settings")}
-	${linkComponent("about","button","#about", "about")}
-	${linkComponent("toggle to dark","button","#about", "toggle")}
-		<h1 class="info__block">About</h1>
+	<div class ="button-block theme-${state.theme}">
+	<h1 class="info__block">About</h1>
+	${linkComponent({
+		text: "home",
+		className: "button",
+		href: "#home",
+		id: "homeID"
+	})}
+	${linkComponent({
+		text: "settings",
+		className: "button",
+		href: "#settings",
+		id: "settingsID"
+	})}
+	${linkComponent({
+		text: "about",
+		className: "button",
+		href: "#about",
+		id: "aboutID"
+	})}
 	</div>`
 };

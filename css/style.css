@@ -1,17 +1,37 @@
+body {
+	margin: 0;
+
+}
+
 .button-block {
 	display: grid;
 	justify-content: center;
-	padding-top: 200px;
 	gap: 10px;
 	position: relative;
 	grid-template-columns: repeat(4, 200px);
-	grid-template-rows: 20px 1fr;
+	grid-template-rows: 140px 20px 1fr;
 	justify-items: center;
+}
+
+.theme-dark {
+	color: #fff;
+	background-color: rgb(36, 30, 30);
+	min-height: 100vh;
+}
+
+.theme-light {
+	color: #000;
+	background-color: #fff;
+	min-height: 100vh;
+}
+
+.theme-dark a{
+	color: #fff;
 }
 
 .container__movie-list {
 	grid-column: 1 / 4;
-	grid-row: 2;
+	grid-row: 3;
 }
 
 .movie-list {
@@ -28,8 +48,7 @@ padding: 10px;
 }
 
 .info__block {
-	position: absolute;
-	top: 0;
+	grid-column: 1 / 5;
 	margin: 50px auto;
 }
 
