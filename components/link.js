@@ -14,15 +14,24 @@ const ToggleThemeButtonsComponent = () => {
 	})
 };
 
+//generate unique identifier
+const uuid = () => Math.floor(Math.random() * Date.now());
+const onClick = (callback) => {
+	const uid = uuid();
+
+	onRender(() => document.querySelector(`[onClick="${uid}"]`).addEventListener('click', callback));
+
+	return uid;
+};
 
 function linkComponent(props) {
-	if (props.onClick) {
-		onRender(() => {
-			document
-				.querySelector(`#${props.id}`)
-				.addEventListener('click', props.onClick);
-		})
-	}
+	// if (props.onClick) {
+	// 	onRender(() => {
+	// 		document
+	// 			.querySelector(`#${props.id}`)
+	// 			.addEventListener('click', props.onClick);
+	// 	})
+	// }
 	
-	return `<a class="${props.className}" href="${props.href}" id="${props.id}">${props.text}</a>`;
+	return `<a class="${props.className}" href="${props.href}" id="${props.id}" onClick="${onClick(props.onClick)}">${props.text}</a>`;
 }

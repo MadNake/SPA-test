@@ -40,12 +40,6 @@ body {
 
 }
 
-.movie-list__item {
-display: flex;
-gap: 20px;
-align-items: center;
-padding: 10px;
-}
 
 .info__block {
 	grid-column: 1 / 5;
@@ -60,4 +54,39 @@ padding: 10px;
 
 .button:hover {
 	font-size: 1.2em;
+}
+
+.movie-link {
+	text-decoration: none;
+	color: #000;
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	padding: 10px;
+	cursor: default;
+	max-width: max-content;
+	transition: all 0.5s ease;
+}
+
+.movie-link:hover {
+	font-size: 1.2em;
+}
+
+.movie-link span:hover,
+.movie-link img:hover {
+	cursor: pointer;
+}
+
+.film-block {
+	display: grid;
+	grid-template-columns: repeat(3, 100px);
+	justify-content: center;
+	align-items: center;
+	justify-items: center;
+}
+
+.container__movie-item {
+	grid-column: 1 / 4;
+	align-self: flex-start;
+	text-align: center;
 }

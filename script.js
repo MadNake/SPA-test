@@ -1,8 +1,10 @@
 "use stict"
 
 // added components
-import { homeComponent, settingsComponent, aboutComponent } from '/components/index.js';
-export { handleHash, onRender, listeners }
+import { homeComponent, settingsComponent, aboutComponent, itemMovieComponent, setState } from '/components/index.js';
+export { handleHash, onRender, listeners, render, mainDiv };
+import data from './movies.json' assert { type: 'json' };
+
 // creat blocks in HTML
 let mainDiv = document.getElementById('root');
 
@@ -30,6 +32,13 @@ function onRender(params) {
 // change the block depending on the hash
 function handleHash() {
 	let name = getRouteInfo();
+// change the state obj to render correct movie
+	for (let i = 0; i < data.imdb_movies.length; i++) {
+		if (`/movies/:${[i]}` === getRouteInfo()) {
+			setState("film", data.imdb_movies[i-1]);
+			render(itemMovieComponent(), mainDiv);
+		}
+	}
 
 	switch (name) {
 		case "home":
@@ -41,9 +50,9 @@ function handleHash() {
 		case "about":
 			render(aboutComponent(), mainDiv);
 			break;
-		default:
-			render(homeComponent(), mainDiv);
-			break;
+		// default:
+		// 	render(homeComponent(), mainDiv);
+		// 	break;
 	}
 	for (let i = 0; i < listeners.length; i++) {
 		listeners[i]();

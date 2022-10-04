@@ -11,19 +11,19 @@ function homeComponent() {
 		text: "home",
 		className: "button",
 		href: "#home",
-		id: "homeID"
+		id: "homeID",
 	})}
 		${linkComponent({
 		text: "settings",
 		className: "button",
 		href: "#settings",
-		id: "settingsID"
+		id: "settingsID",
 	})}
 		${linkComponent({
 		text: "about",
 		className: "button",
 		href: "#about",
-		id: "aboutID"
+		id: "aboutID",
 	})}
 
 		<div class="container__movie-list">
@@ -34,5 +34,3 @@ function homeComponent() {
 
 	 </div>
 	`};
-
-	// "settings","button","#settings", "settingsID"
