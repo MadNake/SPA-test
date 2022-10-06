@@ -15,18 +15,22 @@ const MovieComponent = (movie) => `
 
 function getMovieId() {
 	let idMovie = getRouteInfo().split("/");
-	return idMovie[2] - 1;
+	return idMovie[2];
 };
+
+function getMovie() {
+  return data.imdb_movies.find((movie) => movie.ranking == getMovieId());
+}
 
 const itemMovieComponent = () => `
 <div class ="film-block theme-${state.theme}">
 ${tripleLinkComponent()}
 
 <div class="container__movie-item">
-  <h1 class="info__block">${data.imdb_movies[getMovieId()].movie_name}</h1>
-  <p>${data.imdb_movies[getMovieId()].summary}</p>
-  <img src="${data.imdb_movies[getMovieId()].poster_image}">
-  <p>release date: ${data.imdb_movies[getMovieId()].release_date}</p>
+  <h1 class="info__block">${getMovie().movie_name}</h1>
+  <p>${getMovie().summary}</p>
+  <img src="${getMovie().poster_image}">
+  <p>release date: ${getMovie().release_date}</p>
 </div>
 
 </div>
