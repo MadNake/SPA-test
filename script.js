@@ -33,26 +33,23 @@ function onRender(params) {
 function handleHash() {
 	let name = getRouteInfo();
 // change the state obj to render correct movie
-	for (let i = 0; i < data.imdb_movies.length; i++) {
-		if (`/movies/${[i]}` === getRouteInfo()) {
-			render(itemMovieComponent(), mainDiv);
-		}
+
+	if (name === 'home') {
+		render(homeComponent(), mainDiv);
 	}
 
-	switch (name) {
-		case "home":
-			render(homeComponent(), mainDiv);
-			break;
-		case "settings":
-			render(settingsComponent(), mainDiv);
-			break;
-		case "about":
-			render(aboutComponent(), mainDiv);
-			break;
-		// default:
-		// 	render(homeComponent(), mainDiv);
-		// 	break;
+	if (name === 'settings') {
+		render(settingsComponent(), mainDiv);
 	}
+
+	if (name === 'about') {
+		render(aboutComponent(), mainDiv);
+	}
+
+	if (name.match(/movies\/(.*)/)) {
+		render(itemMovieComponent(), mainDiv)
+	}
+
 	for (let i = 0; i < listeners.length; i++) {
 		listeners[i]();
 	}
