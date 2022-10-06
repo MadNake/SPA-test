@@ -1,4 +1,4 @@
-export { linkComponent, ToggleThemeButtonsComponent };
+export { linkComponent, ToggleThemeButtonsComponent, tripleLinkComponent };
 import { setState, getState, handleHash, onRender } from './index.js'
 
 const ToggleThemeButtonsComponent = () => {
@@ -8,7 +8,6 @@ const ToggleThemeButtonsComponent = () => {
 		text: currentTheme === "light" ? 'toggle to dark' : 'toggle to light',
 		className: "button",
 		href: "#settings",
-		id: "toggleID",
 		onClick: () => {currentTheme === "light" ? setState("theme", "dark") : setState("theme", "light");
 		handleHash()},
 	})
@@ -25,13 +24,24 @@ const onClick = (callback) => {
 };
 
 function linkComponent(props) {
-	// if (props.onClick) {
-	// 	onRender(() => {
-	// 		document
-	// 			.querySelector(`#${props.id}`)
-	// 			.addEventListener('click', props.onClick);
-	// 	})
-	// }
-	
 	return `<a class="${props.className}" href="${props.href}" id="${props.id}" onClick="${onClick(props.onClick)}">${props.text}</a>`;
+}
+
+function tripleLinkComponent() {
+	return `
+	${linkComponent({
+		text: "home",
+		className: "button",
+		href: "#home",
+		})}
+		${linkComponent({
+		text: "settings",
+		className: "button",
+		href: "#settings",
+		})}
+		${linkComponent({
+		text: "about",
+		className: "button",
+		href: "#about",
+		})}`
 }

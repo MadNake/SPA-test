@@ -2,7 +2,7 @@
 
 // added components
 import { homeComponent, settingsComponent, aboutComponent, itemMovieComponent, setState } from '/components/index.js';
-export { handleHash, onRender, listeners, render, mainDiv };
+export { handleHash, onRender, listeners, render, mainDiv, getRouteInfo };
 import data from './movies.json' assert { type: 'json' };
 
 // creat blocks in HTML
@@ -34,8 +34,7 @@ function handleHash() {
 	let name = getRouteInfo();
 // change the state obj to render correct movie
 	for (let i = 0; i < data.imdb_movies.length; i++) {
-		if (`/movies/:${[i]}` === getRouteInfo()) {
-			setState("film", data.imdb_movies[i-1]);
+		if (`/movies/${[i]}` === getRouteInfo()) {
 			render(itemMovieComponent(), mainDiv);
 		}
 	}
