@@ -1,9 +1,10 @@
 export { settingsComponent };
-import { tripleLinkComponent, state, ToggleThemeButtonsComponent } from "./index.js";
+import { tripleLinkComponent, getState, ToggleThemeButtonsComponent } from '../index.js';
+
 
 function settingsComponent() {
 	return `
-	<div class ="button-block theme-${state.theme}">
+	<div class ="button-block theme-${getState("theme")}">
 	<h1 class="info__block">Settings</h1>
 	${tripleLinkComponent()}
 	${ToggleThemeButtonsComponent()}

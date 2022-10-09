@@ -1,17 +1,17 @@
 export { homeComponent };
-import { MovieComponent, state, tripleLinkComponent } from "./index.js";
-import data from '../movies.json' assert { type: 'json' };
+import { MovieLiComponent, getState, tripleLinkComponent } from '../index.js';
+import data from '../data/movies.json' assert { type: 'json' };
 
 
 function homeComponent() {
 	return `
-	<div class ="button-block theme-${state.theme}">
+	<div class ="button-block theme-${getState("theme")}">
 		<h1 class="info__block">Home</h1>
 		${tripleLinkComponent()}
 
 		<div class="container__movie-list">
 			<ul class="movie-list">
-			${data.imdb_movies.map(MovieComponent).join('')}
+			${data.imdb_movies.map(MovieLiComponent).join('')}
 			</ul>
 		</div>
 
