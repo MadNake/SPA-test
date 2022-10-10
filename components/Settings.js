@@ -4,7 +4,7 @@ import { tripleLinkComponent, getState, ToggleThemeButtonsComponent } from '../i
 
 function settingsComponent() {
 	return `
-	<div class ="button-block theme-${getState("theme")}">
+	<div class ="button-block theme-${getState("theme")}" style='grid-template-columns: repeat(4, 200px)'>
 	<h1 class="info__block">Settings</h1>
 	${tripleLinkComponent()}
 	${ToggleThemeButtonsComponent()}

@@ -1,32 +1,95 @@
 body {
 	margin: 0;
-
+	font-family: 'Quicksand', sans-serif;
 }
+
+
 
 .button-block {
 	display: grid;
 	justify-content: center;
 	gap: 10px;
 	position: relative;
-	grid-template-columns: repeat(4, 200px);
-	grid-template-rows: 140px 20px 1fr;
+	grid-template-columns: repeat(3, 200px);
+	grid-template-rows: 140px 30px 1fr;
 	justify-items: center;
+	align-items: center;
+}
+
+.button {
+	text-decoration: none;
+	color: #000;
+	transition: all 0.5s ease;
+	font-weight: 700;
+}
+
+
+.theme-dark a{
+	color: #fff;
 }
 
 .theme-dark {
 	color: #fff;
 	background-color: rgb(36, 30, 30);
 	min-height: 100vh;
+	background-image: url('/img/background3.svg');
+	background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .theme-light {
 	color: #000;
 	background-color: #fff;
 	min-height: 100vh;
+	background-image: url('/img/background4.svg');
+	background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-.theme-dark a{
+.theme-dark .theme-dark__button {
+	color: #000;
+	background-color: #fff;
+	border-radius: 30px;
+	padding: 10px;
+	position: relative;
+}
+
+.theme-dark .theme-dark__button::after {
+	position: absolute;
+	content: "";
+	right: -35px;
+	top: 10px;
+	width: 25px;
+	height: 25px;
+	background: url('/img/sun-icon.svg') no-repeat;
+}
+
+.theme-light__button {
 	color: #fff;
+	background-color: #000;
+	border-radius: 30px;
+	padding: 10px;
+	position: relative;
+}
+
+.theme-light__button::after {
+	position: absolute;
+	content: "";
+	right: -35px;
+	top: 10px;
+	width: 25px;
+	height: 25px;
+	background: url('/img/moon-icon.svg') no-repeat;
 }
 
 .container__movie-list {
@@ -37,7 +100,6 @@ body {
 .movie-list {
 	list-style: none;
 	padding: 0;
-
 }
 
 
@@ -46,11 +108,6 @@ body {
 	margin: 50px auto;
 }
 
-.button {
-	text-decoration: none;
-	color: #000;
-	transition: all 0.5s ease;
-}
 
 .button:hover {
 	font-size: 1.2em;
