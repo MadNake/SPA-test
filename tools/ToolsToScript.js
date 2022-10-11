@@ -1,4 +1,4 @@
-export { getRouteInfo, render, onRender, listeners, resetListeners }
+export { getRouteInfo, render, onRender }
 
 
 //get info from #
@@ -9,8 +9,9 @@ function getRouteInfo() {
 
 
 // create a function to render element 
-function render(content, path) {
+function render(content, path = document.getElementById('root')) {
 	path.innerHTML = content;
+	initListeners();
 };
 
 
@@ -24,4 +25,11 @@ function onRender(params) {
 
 function resetListeners() {
 	listeners = [];
+};
+
+function initListeners() {
+	for (let i = 0; i < listeners.length; i++) {
+		listeners[i]();
+	};
+	resetListeners();
 }

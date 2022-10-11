@@ -1,5 +1,7 @@
+import { rootComponent } from '../components/Root.js';
+
 export { state, setState, getState };
-import { handleHash } from '../script.js';
+// import { handleHash } from '../script.js';
 
 
 const state = {
@@ -9,7 +11,7 @@ const state = {
 
 function setState(key, value) {
 	state[key] = value;
-	handleHash();
+	rootComponent();
 };
 
 

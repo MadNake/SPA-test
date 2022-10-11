@@ -1,8 +1,20 @@
 export { itemMovieComponent };
-import { getState, tripleLinkComponent, getMovie } from '../index.js';
+import { getState, tripleLinkComponent, getRouteInfo, render } from '../index.js';
+import data from '../data/movies.json' assert { type: 'json' };
 
 
-const itemMovieComponent = () => `
+function getMovieId() {
+	let idMovie = getRouteInfo().split("/");
+	return idMovie[2];
+};
+
+
+function getMovie() {
+	return data.imdb_movies.find((movie) => movie.ranking == getMovieId());
+};
+
+
+const itemMovieComponent = () => render(`
 <div class ="film-block theme-${getState("theme")}">
 ${tripleLinkComponent()}
 
@@ -14,4 +26,4 @@ ${tripleLinkComponent()}
 </div>
 
 </div>
-`;
+`);
