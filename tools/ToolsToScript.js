@@ -1,4 +1,17 @@
-export { getRouteInfo, render, onRender }
+export { getRouteInfo, render, onRender, init, data };
+import { setState } from '../index.js'
+
+let data = {
+	component : "",
+	path: "",
+}
+
+function init(component, path, setup) {
+	data.component = component;
+	data.path = path;
+	setState(setup[0], setup[1]);
+	addEventListener("hashchange", () => render(data.component(), data.path) );
+};
 
 
 //get info from #
@@ -32,4 +45,4 @@ function initListeners() {
 		listeners[i]();
 	};
 	resetListeners();
-}
+};

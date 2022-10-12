@@ -14,7 +14,7 @@ function tripleLinkComponent() {
 	${linkComponent({
 		text: "home",
 		className: "button",
-		href: "#home",
+		href: "#",
 	})}
 
 	${linkComponent({

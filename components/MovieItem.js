@@ -1,5 +1,5 @@
 export { itemMovieComponent };
-import { getState, tripleLinkComponent, getRouteInfo, render } from '../index.js';
+import { getState, tripleLinkComponent, getRouteInfo } from '../index.js';
 import data from '../data/movies.json' assert { type: 'json' };
 
 
@@ -14,7 +14,7 @@ function getMovie() {
 };
 
 
-const itemMovieComponent = () => render(`
+const itemMovieComponent = () => `
 <div class ="film-block theme-${getState("theme")}">
 ${tripleLinkComponent()}
 
@@ -26,4 +26,4 @@ ${tripleLinkComponent()}
 </div>
 
 </div>
-`);
+`;

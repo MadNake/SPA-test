@@ -13,4 +13,4 @@ export { state, setState, getState } from './data/StateSettings.js';
 
 // from tools
 export { onClick } from './tools/ToolsToLinks.js';
-export { getRouteInfo, render, onRender } from './tools/ToolsToScript.js';
+export { getRouteInfo, render, onRender, init, data } from './tools/ToolsToScript.js';

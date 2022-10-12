@@ -1,17 +1,14 @@
-import { rootComponent } from '../components/Root.js';
+import { render, data } from '../index.js';
 
 export { state, setState, getState };
-// import { handleHash } from '../script.js';
 
 
-const state = {
-	theme: "light",
-};
+const state = {};
 
 
 function setState(key, value) {
 	state[key] = value;
-	rootComponent();
+	render(data.component(), data.path);
 };
 
 

@@ -1,10 +1,10 @@
 export { homeComponent };
-import { MovieLiComponent, getState, tripleLinkComponent, render } from '../index.js';
+import { MovieLiComponent, getState, tripleLinkComponent } from '../index.js';
 import data from '../data/movies.json' assert { type: 'json' };
 
 
 function homeComponent() {
-	render(`
+	return `
 	<div class ="button-block theme-${getState("theme")}">
 		<h1 class="info__block">Home</h1>
 		${tripleLinkComponent()}
@@ -16,4 +16,4 @@ function homeComponent() {
 		</div>
 
 	 </div>
-	`)};
+	`};
