@@ -1,15 +1,16 @@
-export { getRouteInfo, render, onRender, init, data };
-import { setState } from '../index.js'
+export { getRouteInfo, render, onRender, init, data, initLang };
+import { setState, getState } from '../index.js'
 
 let data = {
 	component : "",
 	path: "",
 }
 
-function init(component, path, setup) {
+function init(component, path, setup, language) {
 	data.component = component;
 	data.path = path;
 	setState(setup[0], setup[1]);
+	setState("lang", language);
 	addEventListener("hashchange", () => render(data.component(), data.path) );
 };
 
@@ -45,4 +46,15 @@ function initListeners() {
 		listeners[i]();
 	};
 	resetListeners();
+};
+
+
+function initLang( translateComponent, string) {
+	if (getState("lang") === "ru") {
+		return translateComponent.ru[string];
+	};
+
+	if (getState("lang") === "en") {
+		return translateComponent.en[string];
+	}
 };

@@ -147,3 +147,9 @@ body {
 	align-self: flex-start;
 	text-align: center;
 }
+
+.lang__button {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
