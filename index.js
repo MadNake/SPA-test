@@ -11,7 +11,8 @@ export { rootComponent } from './components/Root.js';
 
 // from data
 export { state, setState, getState } from './data/StateSettings.js';
+export { dataTranslate } from './data/Language.js';
 
 // from tools
 export { onClick } from './tools/ToolsToLinks.js';
-export { getRouteInfo, render, onRender, init, data, initLang } from './tools/ToolsToScript.js';
+export { getRouteInfo, render, onRender, init, data, translate } from './tools/ToolsToScript.js';

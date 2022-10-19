@@ -1,5 +1,5 @@
-export { getRouteInfo, render, onRender, init, data, initLang };
-import { setState, getState } from '../index.js'
+export { getRouteInfo, render, onRender, init, data, translate };
+import { setState, getState, dataTranslate } from '../index.js'
 
 let data = {
 	component : "",
@@ -48,13 +48,24 @@ function initListeners() {
 	resetListeners();
 };
 
+const get = (object, path, defaultValue) => {
+  const _path = Array.isArray(path)
+    ? path
+    : path.split('.');
+  if (object && _path.length) return get(object[_path.shift()], _path, defaultValue);
+  return object === undefined ? defaultValue : object;
+};
 
-function initLang( translateComponent, string) {
+function translate(string) {
 	if (getState("lang") === "ru") {
-		return translateComponent.ru[string];
+		return get(dataTranslate.ru, string);
 	};
 
 	if (getState("lang") === "en") {
-		return translateComponent.en[string];
-	}
+		return get(dataTranslate.en, string);
+	};
+
+	if (getState("lang") === "de") {
+		return get(dataTranslate.de, string);
+	};
 };

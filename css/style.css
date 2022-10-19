@@ -136,7 +136,7 @@ body {
 
 .film-block {
 	display: grid;
-	grid-template-columns: repeat(3, 100px);
+	grid-template-columns: repeat(3, 125px);
 	justify-content: center;
 	align-items: center;
 	justify-items: center;

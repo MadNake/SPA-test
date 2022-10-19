@@ -1,22 +1,26 @@
-import { setState, getState, linkComponent, initLang } from '../index.js';
+import { setState, getState, linkComponent, translate } from '../index.js';
 export { ToggleLangButtonComponent };
 
-let translateToggleLangButton = {
-	"ru": {
-		"toggle__en": "Язык: Русский",
-	},
-	"en": {
-		"toggle__ru": "Language: English",
-	}
-}
+
 
 const ToggleLangButtonComponent = () => {
 	const currentLang = getState('lang');
 
 	return linkComponent({
-		text: currentLang === "en" ? `${initLang(translateToggleLangButton, "toggle__ru")}` : `${initLang(translateToggleLangButton, "toggle__en")}`,
+		text: translate("toggleLang.toggle__lang"),
 		className: `button lang__button`,
 		href: "#settings",
-		onClick: () => { currentLang === "en" ? setState("lang", "ru") : setState("lang", "en") },
+		onClick: () => {
+			switch (currentLang) {
+				case "en": setState("lang", "de");
+					break;
+				case "de": setState("lang", "ru");
+					break;
+				case "ru": setState("lang", "en");
+					break;
+				default: setState("lang", "en")
+					break;
+			}
+		},
 	})
 };
