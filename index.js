@@ -8,6 +8,7 @@ export { MovieLiComponent } from './components/MovieLi.js'
 export { ToggleThemeButtonsComponent } from './components/ToggleThemeButton.js';
 export { ToggleLangButtonComponent } from './components/ToggleLangButton.js';
 export { rootComponent } from './components/Root.js';
+export { langList } from './components/LangListcComponent.js';
 
 // from data
 export { state, setState, getState } from './data/StateSettings.js';

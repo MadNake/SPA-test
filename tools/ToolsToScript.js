@@ -57,15 +57,5 @@ const get = (object, path, defaultValue) => {
 };
 
 function translate(string) {
-	if (getState("lang") === "ru") {
-		return get(dataTranslate.ru, string);
-	};
-
-	if (getState("lang") === "en") {
-		return get(dataTranslate.en, string);
-	};
-
-	if (getState("lang") === "de") {
-		return get(dataTranslate.de, string);
-	};
+	return get(dataTranslate[getState("lang")], string)
 };
