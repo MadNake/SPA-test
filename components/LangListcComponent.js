@@ -1,3 +1,5 @@
+// Typo in the file name?
+
 import { setState, linkComponent} from '../index.js';
 export {langList};
 

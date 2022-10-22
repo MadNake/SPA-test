@@ -4,6 +4,7 @@ export { rootComponent }
 
 function rootComponent() {
 	let name = getRouteInfo();
+	// Is comment block below outdated? Leaving comments like this behind is a bad habit.
 	// change the state obj to render correct movie
 
 	if (name === '') {
