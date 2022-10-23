@@ -14,6 +14,7 @@ function getMovie() {
 };
 
 
+// Consider using destructuring here: `{ movie_name, ... } = getMovie()`.
 const itemMovieComponent = () => `
 <div class ="film-block theme-${getState("theme")}">
 ${tripleLinkComponent()}
