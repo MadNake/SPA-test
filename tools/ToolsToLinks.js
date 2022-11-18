@@ -1,16 +1,15 @@
-export { onClick };
 import { onRender } from '../index.js';
 
-
-//generate unique identifier 
+// generate unique identifier
 const uuid = () => Math.floor(Math.random() * Date.now());
 
-
-// сreate a function to add onClick to the necessary elements 
+// сreate a function to add onClick to the necessary elements
 const onClick = (callback) => {
-	const uid = uuid();
+  const uid = uuid();
 
-	onRender(() => document.querySelector(`[onClick="${uid}"]`).addEventListener('click', callback));
+  onRender(() => document.querySelector(`[onClick="${uid}"]`).addEventListener('click', callback));
 
-	return uid;
+  return uid;
 };
+
+export { onClick };

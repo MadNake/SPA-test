@@ -1,61 +1,61 @@
-export { getRouteInfo, render, onRender, init, data, translate };
-import { setState, getState, dataTranslate } from '../index.js'
+import { setState, getState, dataTranslate } from '../index.js';
 
-let data = {
-	component : "",
-	path: "",
-}
-
-function init(component, path, setup, language) {
-	data.component = component;
-	data.path = path;
-	setState(setup[0], setup[1]);
-	setState("lang", language);
-	addEventListener("hashchange", () => render(data.component(), data.path) );
+const data = {
+  component: '',
+  path: '',
 };
 
-
-//get info from #
-function getRouteInfo() {
-	let hash = location.hash ? location.hash.slice(1) : '';
-	return hash;
-};
-
-
-// create a function to render element 
-function render(content, path = document.getElementById('root')) {
-	path.innerHTML = content;
-	initListeners();
-};
-
-
-// created new array and func (onRender) to init all in array after render page 
+// created new array and func (onRender) to init all in array after render page
 let listeners = [];
 
-function onRender(params) {
-	listeners.push(params);
-};
-
-
 function resetListeners() {
-	listeners = [];
+  listeners = [];
 };
 
 function initListeners() {
-	for (let i = 0; i < listeners.length; i++) {
-		listeners[i]();
-	};
-	resetListeners();
+  for (let i = 0; i < listeners.length; i += 1) {
+    listeners[i]();
+  };
+  resetListeners();
+};
+
+// create a function to render element
+function render(content, path = document.getElementById('root')) {
+  const way = path;
+  way.innerHTML = content;
+  initListeners();
+};
+
+function init(component, path, theme, language) {
+  data.component = component;
+  data.path = path;
+  setState('theme', theme);
+  setState('lang', language);
+  window.addEventListener('hashchange', () => render(data.component(), data.path));
+};
+
+// get info from #
+function getRouteInfo() {
+  const hash = window.location.hash ? window.location.hash.slice(1) : '';
+  return hash;
+};
+
+function onRender(params) {
+  listeners.push(params);
 };
 
 const get = (object, path, defaultValue) => {
-  const _path = Array.isArray(path)
+  const p = Array.isArray(path)
     ? path
     : path.split('.');
-  if (object && _path.length) return get(object[_path.shift()], _path, defaultValue);
+  if (object && p.length) return get(object[p.shift()], p, defaultValue);
   return object === undefined ? defaultValue : object;
 };
 
 function translate(string) {
-	return get(dataTranslate[getState("lang")], string)
+  return get(dataTranslate[getState('lang')], string);
+};
+
+export {
+  getRouteInfo, render, onRender, init, data, translate,
 };

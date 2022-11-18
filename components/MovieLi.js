@@ -1,16 +1,26 @@
-export { MovieLiComponent };
+/* eslint-disable camelcase */
 import { linkComponent } from '../index.js';
 
+// eslint-disable-next-line max-len
+// Consider using destructuring, like so: `const { ranking, movie_name, year, poster_image } = movie`.
+// This will make your code more compact.
+// Done
 
-const MovieLiComponent = (movie) => `
-<li class= "movie-list__item">
-	${linkComponent({
-		// Consider using destructuring, like so: `const { ranking, movie_name, year, poster_image } = movie`.
-		// This will make your code more compact.
-	text: `<span>${movie.ranking} - ${movie.movie_name} - ${movie.year}</span>
-		<img src="${movie.poster_image}" width="50" height="50">`,
-	className: "movie-link",
-	href: `/#/movies/${movie.ranking}`,
-})}
-</li>
-`;
+function movieLiComponent(movie) {
+  const {
+    ranking, movie_name, year, poster_image,
+  } = movie;
+
+  return `
+  <li class= "movie-list__item">
+  ${linkComponent({
+    text: `<span>${ranking} - ${movie_name} - ${year}</span>
+    <img src="${poster_image}" width="50" height="50">`,
+    className: 'movie-link',
+    href: `/#/movies/${ranking}`,
+  })}
+  </li>
+  `;
+}
+
+export { movieLiComponent };

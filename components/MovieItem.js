@@ -1,30 +1,34 @@
-export { itemMovieComponent };
 import { getState, tripleLinkComponent, getRouteInfo } from '../index.js';
 import data from '../data/movies.json' assert { type: 'json' };
 
-
 function getMovieId() {
-	let idMovie = getRouteInfo().split("/");
-	return idMovie[2];
+  let idMovie = getRouteInfo().split("/");
+  return idMovie[2];
 };
-
 
 function getMovie() {
-	return data.imdb_movies.find((movie) => movie.ranking == getMovieId());
+  return data.imdb_movies.find((movie) => movie.ranking == getMovieId());
 };
 
-
 // Consider using destructuring here: `{ movie_name, ... } = getMovie()`.
-const itemMovieComponent = () => `
-<div class ="film-block theme-${getState("theme")}">
-${tripleLinkComponent()}
+// Done
 
-<div class="container__movie-item">
-  <h1 class="info__block">${getMovie().movie_name}</h1>
-  <p>${getMovie().summary}</p>
-  <img src="${getMovie().poster_image}">
-  <p>release date: ${getMovie().release_date}</p>
-</div>
+function itemMovieComponent() {
+  let {movie_name, summary, poster_image, release_date} = getMovie();
 
-</div>
-`;
+  return `
+  <div class ="film-block theme-${getState("theme")}">
+    ${tripleLinkComponent()}
+
+    <div class="container__movie-item">
+      <h1 class="info__block">${movie_name}</h1>
+      <p>${summary}</p>
+      <img src="${poster_image}">
+      <p>release date: ${release_date}</p>
+    </div>
+
+  </div>
+  `
+}
+
+export { itemMovieComponent };
