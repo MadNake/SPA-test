@@ -1,6 +1,8 @@
-import {
-  homeComponent, settingsComponent, aboutComponent, itemMovieComponent, getRouteInfo,
-} from '../index.js';
+import { aboutComponent } from './About.js';
+import { settingsComponent } from './Settings.js';
+import { homeComponent } from './Home.js';
+import { itemMovieComponent } from './MovieItem.js';
+import { getRouteInfo } from '../tools/indexTools.js';
 
 function rootComponent() {
   const name = getRouteInfo();

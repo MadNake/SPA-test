@@ -1,4 +1,6 @@
-import { getState, tripleLinkComponent, getRouteInfo } from '../index.js';
+import { tripleLinkComponent } from './Link.js';
+import { getState } from '../data/indexData.js';
+import { getRouteInfo } from '../tools/indexTools.js';
 import data from '../data/movies.json' assert { type: 'json' };
 
 function getMovieId() {

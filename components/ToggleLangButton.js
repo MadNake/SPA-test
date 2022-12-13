@@ -1,4 +1,6 @@
-import { getState, translate, langList } from '../index.js';
+import { langList } from './LangListComponent.js';
+import { getState } from '../data/indexData.js';
+import { translate } from '../tools/indexTools.js';
 
 const toggleLangButtonComponent = () => `
   <div class="dropdown">

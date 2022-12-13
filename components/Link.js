@@ -1,4 +1,4 @@
-import { onClick, translate } from '../index.js';
+import { onClick, translate } from '../tools/indexTools.js';
 
 // create a single link
 function linkComponent(props) {

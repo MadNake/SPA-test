@@ -1,7 +1,8 @@
 'use stict';
 
 // added components
-import { init, rootComponent } from './index.js';
+import { init } from './tools/indexTools.js';
+import { rootComponent } from './components/indexComponents.js';
 
 // I observe icencistency here.
 // Both `theme` and `lang` are similar keys in the state,

@@ -1,4 +1,4 @@
-import { setState, getState, dataTranslate } from '../index.js';
+import { setState, getState, dataTranslate } from '../data/indexData.js';
 
 const data = {
   component: '',

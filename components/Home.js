@@ -1,4 +1,8 @@
-import { movieLiComponent, getState, tripleLinkComponent, translate } from '../index.js';
+import { tripleLinkComponent } from './Link.js';
+import { movieLiComponent } from './MovieLi.js';
+import { translate } from '../tools/indexTools.js';
+import { getState } from '../data/indexData.js';
+
 import data from '../data/movies.json' assert { type: 'json' };
 
 function homeComponent() {

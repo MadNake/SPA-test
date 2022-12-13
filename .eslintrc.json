@@ -11,6 +11,14 @@
         "sourceType": "module"
     },
     "rules": {
-        "no-extra-semi": 0
+        "no-extra-semi": 0,
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+              "js": "always"
+            }
+         ],
+         "import/prefer-default-export": 0
     }
 }

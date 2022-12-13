@@ -1,4 +1,5 @@
-import { setState, linkComponent } from '../index.js';
+import { linkComponent } from './Link.js';
+import { setState } from '../data/indexData.js';
 
 function langList() {
   return `

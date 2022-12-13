@@ -1,4 +1,4 @@
-import { onRender } from '../index.js';
+import { onRender } from './ToolsToScript.js';
 
 // generate unique identifier
 const uuid = () => Math.floor(Math.random() * Date.now());

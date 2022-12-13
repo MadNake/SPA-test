@@ -1,0 +1,10 @@
+export { aboutComponent } from './About.js';
+export { homeComponent } from './Home.js';
+export { settingsComponent } from './Settings.js';
+export { linkComponent, tripleLinkComponent } from './Link.js';
+export { itemMovieComponent } from './MovieItem.js';
+export { movieLiComponent } from './MovieLi.js';
+export { toggleThemeButtonsComponent } from './ToggleThemeButton.js';
+export { toggleLangButtonComponent } from './ToggleLangButton.js';
+export { rootComponent } from './Root.js';
+export { langList } from './LangListComponent.js';

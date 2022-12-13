@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { linkComponent } from '../index.js';
+import { linkComponent } from './Link.js';
 
 // eslint-disable-next-line max-len
 // Consider using destructuring, like so: `const { ranking, movie_name, year, poster_image } = movie`.

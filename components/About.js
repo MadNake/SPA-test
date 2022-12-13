@@ -1,4 +1,6 @@
-import { tripleLinkComponent, getState, translate } from '../index.js';
+import { tripleLinkComponent } from './Link.js';
+import { translate } from '../tools/indexTools.js';
+import { getState } from '../data/indexData.js';
 
 function aboutComponent() {
   return `

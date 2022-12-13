@@ -1,6 +1,6 @@
-import {
-  setState, getState, linkComponent, translate,
-} from '../index.js';
+import { linkComponent } from './Link.js';
+import { translate } from '../tools/indexTools.js';
+import { setState, getState } from '../data/indexData.js';
 
 const toggleThemeButtonsComponent = () => {
   const isLightTheme = getState('theme') === 'light';

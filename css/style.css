@@ -190,7 +190,7 @@ width: 40px;
 	content: "";
 	height: 16px;
 	position: absolute;
-	right: 0;
+	right: -4px;
 	top: 7px;
 	width: 16px;
 }

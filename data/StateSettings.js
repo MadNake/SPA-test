@@ -1,4 +1,4 @@
-import { render, data } from '../index.js';
+import { render, data } from '../tools/indexTools.js';
 
 const state = {};
 

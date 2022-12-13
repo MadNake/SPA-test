@@ -1,6 +1,8 @@
-import {
-  tripleLinkComponent, getState, toggleThemeButtonsComponent, translate, toggleLangButtonComponent,
-} from '../index.js';
+import { toggleLangButtonComponent } from './ToggleLangButton.js';
+import { toggleThemeButtonsComponent } from './ToggleThemeButton.js';
+import { tripleLinkComponent } from './Link.js';
+import { getState } from '../data/indexData.js';
+import { translate } from '../tools/indexTools.js';
 
 function settingsComponent() {
   return `
