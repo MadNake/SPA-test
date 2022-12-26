@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { setState, getState, dataTranslate } from '../data/indexData.js';
 
 const data = {
@@ -29,8 +30,19 @@ function render(content, path = document.getElementById('root')) {
 function init(component, path, theme, language) {
   data.component = component;
   data.path = path;
-  setState('theme', theme);
-  setState('lang', language);
+  if (localStorage.getItem('theme')) {
+    setState('theme', localStorage.getItem('theme'));
+  } else {
+    setState('theme', theme);
+  };
+  if (localStorage.getItem('lang')) {
+    setState('lang', localStorage.getItem('lang'));
+  } else {
+    setState('lang', language);
+  };
+  // The abbreviated example below results in an expression usage notification without a function call or assignment
+  // localStorage.getItem('theme') ? setState('theme', localStorage.getItem('theme')) : setState('theme', theme);
+  // localStorage.getItem('lang') ? setState('lang', localStorage.getItem('lang')) : setState('lang', language);
   window.addEventListener('hashchange', () => render(data.component(), data.path));
 };
 

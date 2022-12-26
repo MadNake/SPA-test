@@ -5,6 +5,7 @@ const state = {};
 function setState(key, value) {
   state[key] = value;
   render(data.component(), data.path);
+  localStorage.setItem(key, value);
 };
 
 function getState(key) {
