@@ -17,7 +17,7 @@ function movieLiComponent(movie) {
     text: `<span>${ranking} - ${movie_name} - ${year}</span>
     <img src="${poster_image}" width="50" height="50">`,
     className: 'movie-link',
-    href: `/#/movies/${ranking}`,
+    href: `/SPA-test/#/movies/${ranking}`,
   })}
   </li>
   `;
