@@ -33,7 +33,7 @@ body {
 	color: #fff;
 	background-color: rgb(36, 30, 30);
 	min-height: 100vh;
-	background-image: url('/img/background3.svg');
+	background-image: url('/public/background3.svg');
 	background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -47,7 +47,7 @@ body {
 	color: #000;
 	background-color: #fff;
 	min-height: 100vh;
-	background-image: url('/img/background4.svg');
+	background-image: url('/public/background4.svg');
 	background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -72,7 +72,7 @@ body {
 	top: 10px;
 	width: 25px;
 	height: 25px;
-	background: url('/img/sun-icon.svg') no-repeat;
+	background: url('/public/sun-icon.svg') no-repeat;
 }
 
 .theme-light__button {
@@ -90,7 +90,7 @@ body {
 	top: 10px;
 	width: 25px;
 	height: 25px;
-	background: url('/img/moon-icon.svg') no-repeat;
+	background: url('/public/moon-icon.svg') no-repeat;
 }
 
 .container__movie-list {
