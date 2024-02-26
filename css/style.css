@@ -3,14 +3,12 @@ body {
 	font-family: 'Quicksand', sans-serif;
 }
 
-
-
 .button-block {
 	display: grid;
 	justify-content: center;
 	gap: 10px;
 	position: relative;
-	grid-template-columns: repeat(3, 200px);
+	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: 140px 30px 1fr;
 	justify-items: center;
 	align-items: center;
@@ -154,10 +152,6 @@ body {
 	top: 20px;
 	right: 20px;
 }
-
-
-
-
 
 .dropbtn {
 	padding: 5px;

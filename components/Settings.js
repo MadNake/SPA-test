@@ -6,7 +6,7 @@ import { translate } from '../tools/indexTools.js';
 
 function settingsComponent() {
   return `
-  <div class ="button-block theme-${getState('theme')}" style='grid-template-columns: repeat(4, 200px)'>
+  <div class ="button-block theme-${getState('theme')}" style='grid-template-columns: repeat(4, 1fr)'>
   <h1 class="info__block">${translate('settings.info__block')}</h1>
   ${tripleLinkComponent()}
   ${toggleThemeButtonsComponent()}
