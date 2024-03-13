@@ -5,7 +5,7 @@ import data from '../data/movies.json' assert { type: 'json' };
 
 function getMovieId() {
   let idMovie = getRouteInfo().split("/");
-  return idMovie[2];
+  return idMovie[3];
 };
 
 function getMovie() {
