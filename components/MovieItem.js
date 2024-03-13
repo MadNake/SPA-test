@@ -5,13 +5,11 @@ import data from '../data/movies.json' assert { type: 'json' };
 
 function getMovieId() {
   let idMovie = getRouteInfo().split("/");
-  console.log(idMovie);
   return idMovie[3];
 };
 
 function getMovie() {
   let movie = data.imdb_movies.find((movie) => movie.ranking == getMovieId());
-  console.log(movie)
   return movie
 };
 
